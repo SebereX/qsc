@@ -62,7 +62,7 @@ namespace qsc {
     int nphi, nfp;
     qscfloat eta_bar, sigma0, B2c, B2s, I2, p2;
     Vector phi, R0, Z0, R0p, Z0p, R0pp, Z0pp, R0ppp, Z0ppp;
-    Vector d_l_d_phi, d2_l_d_phi2;
+    Vector d_l_d_phi, d2_l_d_phi2, d_varphi_d_phi;
     Vector curvature, torsion;
     qscfloat d_phi, B0, G0, B0_over_abs_G0, abs_G0_over_B0, d_l_d_varphi;
     int sG, spsi, helicity;
@@ -92,6 +92,7 @@ namespace qsc {
     Vector d2_Z20_d_varphi2, d2_Z2s_d_varphi2, d2_Z2c_d_varphi2;
     qscfloat d2_volume_d_psi2, DGeod_times_r2, DWell_times_r2, DMerc_times_r2;
     qscfloat r_singularity_robust;
+    qscfloat iota2;
     Vector r_hat_singularity_robust;
     int newton_result;
     Vector X3c1, X3c3, X3s1, X3s3, Y3c1, Y3c3, Y3s1, Y3s3;
@@ -125,6 +126,7 @@ namespace qsc {
     void calculate_grad_grad_B_tensor();
     void mercier();
     void calculate_r_singularity();
+    void calculate_shear(qscfloat);
   };
   
   std::string outfile(std::string);

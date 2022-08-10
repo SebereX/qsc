@@ -51,6 +51,7 @@ void Qsc::init_axis() {
   d2_l_d_phi2 = (R0 * R0p + R0p * R0pp + Z0p * Z0pp) / d_l_d_phi;
   B0_over_abs_G0 = nphi / d_l_d_phi.sum();
   abs_G0_over_B0 = 1 / B0_over_abs_G0;
+  d_varphi_d_phi = B0_over_abs_G0 * d_l_d_phi;
   d_l_d_varphi = abs_G0_over_B0;
   G0 = sG * abs_G0_over_B0 * B0;
   if (verbose > 0) std::cout << "G0: " << G0 << std::endl;
